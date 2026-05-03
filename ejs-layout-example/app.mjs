@@ -11,8 +11,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
 
 //Configurar express-ejs-layouts
-app.use(expressLayouts);
-app.set('layout', 'layout'); // Archivo de base de laoyouts
+app.use(expressLayouts);//Activar el middleware de express-ejs-layouts
+app.set('layout', 'layout'); // Archivo de base de layouts.ejs
 
 //Servir archivos estáticos
 app.use(express.static(path.resolve('./public')));
