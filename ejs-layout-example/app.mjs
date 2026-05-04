@@ -20,13 +20,17 @@ app.use(express.static(path.resolve('./public')));
 //Ruta principal
 app.get('/', (req, res) => {
     res.render('index', 
-        { title: 'Página Principal',
-            navbarLinks: [
-                { text: 'Inicio', href: '/', icon:'/icons/home.svg' },
-                { text: 'Acerca de', href: '/about', icon:'/icons/info.svg' },
-                { text: 'Contacto', href: '/contact', icon:'/icons/contact.svg' }
-            ]
-        });
+        { title: 'Página Principal'});
+});
+
+//Ruta para la pagina Acerca de
+app.get('/about', (req, res) => {
+    res.render('about', { title: 'Acerca de Nosotros'});
+});
+
+//Ruta para la pagina Contacto
+app.get('/contact', (req, res) => {
+    res.render('contact', { title: 'Contáctanos'});
 });
 
 //Iniciar el servidor
